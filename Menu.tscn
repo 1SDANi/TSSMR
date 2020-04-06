@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MenuBG.tres" type="Texture" id=1]
+[ext_resource path="res://MenuWaves.tres" type="Texture" id=2]
+[ext_resource path="res://ControlUpDown.gd" type="Script" id=3]
+[ext_resource path="res://Loading.tres" type="Texture" id=4]
+
+[node name="MenuBG" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="MenuWaves" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 150.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+fMovePercent = 0.25
+fMoveTarget = 1.5
+bMoveDownAtStart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = -127.0
+margin_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+fMovePercent = 0.25
+fMoveTarget = 0.25
+bMoveDownAtStart = true
