@@ -8,12 +8,12 @@ var fProgress : float
 var bMoveDown : bool
 var fOriginalBegin : float
 
-func _ready():
+func _ready() -> void:
 	bMoveDown = bMoveDownAtStart
 	fProgress = 0
 	fOriginalBegin = get_begin().y
 
-func _process(delta):
+func _process(delta) -> void:
 	var iDirection : int = 1 if bMoveDown else -1
 	set_begin(Vector2(get_begin().x, (get_begin().y + iDirection * fMovePercent * get_rect().size.y * delta)))
 	
